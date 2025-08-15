@@ -1,0 +1,6 @@
+-- require("config.lazy")
+-- require("config.options")
+-- require("config.keymaps")
+-- require("config.autocommands")
+-- require("config.personal-plugins.floaterminal")
+-- vim.cmd("colorscheme kanagawa-dragon")
