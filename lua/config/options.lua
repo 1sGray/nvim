@@ -1,3 +1,5 @@
+-- Themes
+-- vim.cmd("colorscheme gruvbox")
 -- Searching and Patterns
 vim.opt.incsearch = true -- highlight all matches while incrementally searching
 -- vim.opt.ingnorecase = true -- ignore case in search patterns -- TODO: for some reason error when enabled
