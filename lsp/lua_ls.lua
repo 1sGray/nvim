@@ -68,6 +68,8 @@
 --- * [Lua.workspace.library](https://luals.github.io/wiki/settings/#workspacelibrary)
 ---
 return {
+  capabilities = capabilities,
+  on_attach = on_attach,
   cmd = { 'lua-language-server' },
   filetypes = { 'lua' },
   root_markers = {
@@ -88,5 +90,6 @@ return {
       }
     }
   }
+
 
 }

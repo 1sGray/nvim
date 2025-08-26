@@ -11,23 +11,43 @@ vim.g.maplocalleader = " "
 vim.g.have_nerd_font = true
 
 -- ### Plugins ### --
-vim.pack.add({
-  --  { src = ""},
-  --  { src = ""},
-  --  { src = ""},
-  -- LSP Plugins
-  { src = "https://github.com/neovim/nvim-lspconfig" },
-  -- Theme Plugins
+vim.pack.add({ -- Plugin Repos
+  { src = "https://github.com/nvim-treesitter/nvim-treesitter" },
+  { src = "https://github.com/Saghen/blink.cmp"},
+  -- { src = ""},
+  -- { src = "https://github.com/neovim/nvim-lspconfig" },
   { src = "https://github.com/ellisonleao/gruvbox.nvim" },
   -- QOL Plugins
 })
 
+--  Treesitter
+require("nvim-treesitter.configs").setup({
+  enshure_installed = {
+    "lua",
+    "rust",
+  },
+})
+
+-- Blink.cmp
+require("blink.cmp").setup({
+  signature = { enabled = true },
+  fuzzy = { implementation = "lua" },
+})
 -- ### LSPs ### --
-vim.lsp.enable({ "lua_ls", "rust_analyzer", })
+vim.lsp.enable({
+  "lua_ls",
+  "rust_analyzer",
+})
 -- lua_ls
-require "lspconfig".lua_ls.setup {}
+--require "lspconfig".lua_ls.setup {}
 -- rust-analyzer
-require "lspconfig".rust_analyzer.setup({})
+--require "lspconfig".rust_analyzer.setup({
+--  capabilities = capabilities,
+--  on_attach = on_attach,
+--  cmd = {
+--    "rustup", "run", "stable", "rust-analyzer",
+--  }
+--})
 
 -- ### Options ### --
 -- Themes
@@ -41,6 +61,7 @@ vim.opt.scrolloff = 10        -- minimal number of screen lines to keep above an
 vim.opt.sidescrolloff = 15    -- minimal number of columns to keep left and right of the cursor
 vim.opt.wrap = false          -- Disable line wrapping
 vim.opt.cmdheight = 3         -- number of lines used for the command-line
+vim.opt.winborder = "rounded"
 -- Line Number
 vim.opt.number = true         -- Enable Line Numbers
 vim.opt.relativenumber = true -- show the relative line number for each line

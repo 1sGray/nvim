@@ -53,6 +53,8 @@ local function is_library(fname)
 end
 
 return {
+  capabilities = capabilities,
+  on_attach = on_attach,
   cmd = { 'rust-analyzer' },
   filetypes = { 'rust' },
   root_dir = function(bufnr, on_dir)
